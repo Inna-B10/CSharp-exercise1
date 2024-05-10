@@ -52,6 +52,8 @@ class Program
 
         Robot bot1 = new Robot("Bot1");
         bot1.printValues();
+
+        Robot.printCount();
     
 
 
