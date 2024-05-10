@@ -6,9 +6,28 @@ namespace CS_exercise1{
     private string name="Bot";
     private int weight=100;
     private byte[] coordinates={0,0,0};
+    public int Height {get; set;} = 1;
 
-    public Robot(string name, int weight, byte[] coordinates){
-      this.setValues(name, weight, coordinates);
+    public int Weight{
+      get{
+        Console.Write("Result: ");
+        return this.weight;
+        }
+        set {
+          if(value<200){
+            this.weight = 200;
+          }
+          else if(value>5000){
+            this.weight = 5000;
+          }
+          else{
+            this.weight=value;
+          }
+        }
+    }
+    
+    public Robot(string name, int weight, byte[] coordinates, int height){
+      this.setValues(name, weight, coordinates, height);
       countObj++;
     }
     public Robot(string name){
@@ -20,13 +39,14 @@ namespace CS_exercise1{
       countObj++;
     }
 
-    public void setValues(string name, int weight, byte[] coordinates){
+    public void setValues(string name, int weight, byte[] coordinates,int height){
       this.name = name;
       this.weight= weight;
       this.coordinates = coordinates;
+      this.Height= height;
     }
     public void printValues(){
-      Console.Write("Name: "+this.name+", weight: "+this.weight+", coordinates: ");
+      Console.Write($"Name: {this.name}, weight: {this.weight}, height: {this.Height}, coordinates: ");
       foreach (byte el in coordinates){
         Console.Write(el+" ");
       }

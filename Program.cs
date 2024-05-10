@@ -39,12 +39,12 @@ class Program
         Console.WriteLine();
 
         //Objects
-        Robot healer = new Robot("Healer", 800, new byte[]{0,10,0});
-        //healer.setValues("Healer", 800, new byte[]{0,10,0});
+        Robot healer = new Robot("Healer", 800, new byte[]{0,10,0}, 2);
+        //healer.setValues("Healer", 800, new byte[]{0,10,0}, 2);
         healer.printValues();
         
         Robot killer = new Robot();
-        killer.setValues("Killer", 1000, new byte[] {0,0,10});
+        killer.setValues("Killer", 1000, new byte[] {0,0,10}, 3);
         killer.printValues();
 
         Robot bot = new Robot("Bot");
@@ -54,6 +54,12 @@ class Program
         bot1.printValues();
 
         Robot.printCount();
+
+        bot1.Weight = -100;
+        Console.WriteLine(bot1.Weight);
+
+        bot1.Height = 5;
+        Console.WriteLine($"Bot1 height: {bot1.Height}");
     
 
 
