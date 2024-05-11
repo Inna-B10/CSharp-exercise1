@@ -8,13 +8,13 @@ class Program
     static void Main(string[] args)
     {
         int a = 16;
-        double x = 5.324d;
+        double b = 5.324d;
         string level = "user";
 
-        //Array
+        //------------------------Array
         string[] day = {"Monday", "Wednesday", "Friday"};
 
-        //List
+        //------------------------List
         List<string> AuthorList = new List<string>();
         AuthorList.Add("Dickens");
         AuthorList.Add("Christie");
@@ -38,30 +38,47 @@ class Program
         }*/
         Console.WriteLine();
 
-        //Objects
+        //------------------------Objects
         Robot healer = new Robot("Healer", 800, new byte[]{0,10,0}, 2);
-        //healer.setValues("Healer", 800, new byte[]{0,10,0}, 2);
         healer.printValues();
         
-        Robot killer = new Robot();
-        killer.setValues("Killer", 1000, new byte[] {0,0,10}, 3);
+        Robot killer = new Robot("Killer", 1000, new byte[] {0,0,10}, null);
         killer.printValues();
 
-        Robot bot = new Robot("Bot");
+        Robot bot = new Robot();
         bot.printValues();
 
-        Robot bot1 = new Robot("Bot1");
+        Robot bot1 = new Robot("", null, [], 4);
         bot1.printValues();
 
         Robot.printCount();
-
-        bot1.Weight = -100;
-        Console.WriteLine(bot1.Weight);
-
+        /*
+        bot1.Name = "Bot1";
         bot1.Height = 5;
-        Console.WriteLine($"Bot1 height: {bot1.Height}");
+        Console.WriteLine($"{bot1.Name} height: {bot1.Height}");
+        */
     
+        //------------------------Methods
+        Console.WriteLine($"Sum = {AddNumbers(1.7, 3.2)}");
+
+        string text = "Alice,Bob,Chris,Dave,Eric,Fred";
+        //text.stringMethods();
+        string[] list = text.Split(",");
+        foreach(string str in list) {
+            Console.WriteLine(str);
+        }
+        Console.WriteLine($"Hello, {list[3]}!");
+        Console.WriteLine("Goodby, {0} and {1}!", list[0], list[1]);
+        Console.WriteLine("Today is: "+day[2]);
+        Console.WriteLine(text.Substring(10, 5));
+        Console.WriteLine(text.Replace("Eric", "Emil"));
+
+
 
 
     }
+    public static double AddNumbers(double x, double y){
+        return x+y;
+    }
+
 }
