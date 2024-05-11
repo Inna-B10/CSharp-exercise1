@@ -1,7 +1,9 @@
 using System;
 
-namespace CS_exercise1{
-  class Robot{
+namespace CS_exercise1 {
+
+  class Robot : IRobot {
+
     private static int countObj;
 
     public string? Name {get; set;}="Bot";
