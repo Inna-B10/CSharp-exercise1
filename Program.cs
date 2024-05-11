@@ -60,6 +60,7 @@ class Program
         Console.WriteLine();
         //------------------------Methods
         Console.WriteLine($"Sum = {AddNumbers(1.7, 3.2)}");
+        //Console.WriteLine($"Sum = {AddNumbers((int)7.2, (int)3.9)}");
          Console.WriteLine();
 
         double area = AreaCircle();
@@ -81,6 +82,7 @@ class Program
 
         Population population = new Population();
         population.CalculatePopulation(1900);
+        Console.WriteLine();
 
     }
     public static double AreaCircle()
@@ -100,8 +102,14 @@ class Program
         }
         while (true);    
     }
+    
     public static double AddNumbers(double x, double y){
         return x+y;
     }
+    /*
+    public static int AddNumbers(int x, int y){
+        return x+y;
+    }
+    */
 
 }
