@@ -57,12 +57,14 @@ class Program
         bot1.Height = 5;
         Console.WriteLine($"{bot1.Name} height: {bot1.Height}");
         */
-    
+        Console.WriteLine();
         //------------------------Methods
         Console.WriteLine($"Sum = {AddNumbers(1.7, 3.2)}");
+         Console.WriteLine();
 
         double area = AreaCircle();
         Console.WriteLine("Area of circle is: {0}", area);
+        Console.WriteLine();
 
         string text = "Alice,Bob,Chris,Dave,Eric,Fred";
 
@@ -75,15 +77,28 @@ class Program
         Console.WriteLine("Today is: "+day[2]);
         Console.WriteLine(text.Substring(10, 5));
         Console.WriteLine(text.Replace("Eric", "Emil"));
+        Console.WriteLine();
+
+        Population population = new Population();
+        population.CalculatePopulation(1900);
 
     }
     public static double AreaCircle()
     {
-        Console.WriteLine("Input radius (float num): ");
-        double radius = Convert.ToDouble(Console.ReadLine());
-        double area = Math.PI * Math.Pow(radius, 2);
+        double radius;
+        do {
+            Console.WriteLine("Input radius (float num): ");
+            string input = Console.ReadLine();
 
-        return(area);
+            if (double.TryParse(input, out radius)) {
+                double area = Math.PI * Math.Pow(radius, 2);
+                return(area);
+            }
+            else {
+                Console.WriteLine("Invalid input! Please enter a valid floating-point number.");
+            }
+        }
+        while (true);    
     }
     public static double AddNumbers(double x, double y){
         return x+y;
