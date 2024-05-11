@@ -60,6 +60,8 @@ class Program
     
         //------------------------Methods
         Console.WriteLine($"Sum = {AddNumbers(1.7, 3.2)}");
+        double area = AreaCircle();
+        Console.WriteLine(area);
 
         string text = "Alice,Bob,Chris,Dave,Eric,Fred";
         //text.stringMethods();
@@ -73,9 +75,14 @@ class Program
         Console.WriteLine(text.Substring(10, 5));
         Console.WriteLine(text.Replace("Eric", "Emil"));
 
+    }
+    public static double AreaCircle()
+    {
+        Console.WriteLine("Input radius (float num): ");
+        double radius = Convert.ToDouble(Console.ReadLine());
+        double area = Math.PI * Math.Pow(radius, 2);
 
-
-
+        return(area);
     }
     public static double AddNumbers(double x, double y){
         return x+y;
