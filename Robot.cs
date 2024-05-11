@@ -9,14 +9,17 @@ namespace CS_exercise1{
     public byte[] Coordinates {get; set;}={0,0,0};
     public int? Height {get; set;}=1;
 
+    // default constructor
     public Robot(){}
+
+    // user's constructor
     public Robot(string? name, int? weight, byte[] coordinates, int? height){
-      if(name !="")
+      if(String.IsNullOrWhiteSpace(name)!=true || name.Trim().Length != 0)
       Name = name;
-      if(weight<200||weight==null) Weight=200; else Weight= weight;
+      if(weight<200||weight==0) Weight=200; else Weight= weight;
       if(coordinates.Length>0)
       Coordinates = coordinates;
-      if (height != null)
+      if (height.HasValue)
       {
         Height = height;
       }

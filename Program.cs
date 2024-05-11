@@ -60,11 +60,12 @@ class Program
     
         //------------------------Methods
         Console.WriteLine($"Sum = {AddNumbers(1.7, 3.2)}");
+
         double area = AreaCircle();
-        Console.WriteLine(area);
+        Console.WriteLine("Area of circle is: {0}", area);
 
         string text = "Alice,Bob,Chris,Dave,Eric,Fred";
-        //text.stringMethods();
+
         string[] list = text.Split(",");
         foreach(string str in list) {
             Console.WriteLine(str);
